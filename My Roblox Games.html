@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meine Roblox-Spiele</title>
+    <style>
+        :root {
+            --background-color: #1a1a1a;
+            --text-color: #f0f0f0;
+            --card-bg-color: #1e1e1e;
+            --link-color: #1db954;
+            --hover-color: #28a745;
+            --shadow-color: rgba(0, 0, 0, 0.7);
+        }
+
+        /* Light Mode */
+        [data-theme="light"] {
+            --background-color: #f0f0f0;
+            --text-color: #1a1a1a;
+            --card-bg-color: #ffffff;
+            --link-color: #007bff;
+            --hover-color: #0056b3;
+            --shadow-color: rgba(0, 0, 0, 0.2);
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--background-color);
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .toggle-theme {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: var(--card-bg-color);
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            color: var(--text-color);
+            border-radius: 5px;
+            box-shadow: 0 2px 5px var(--shadow-color);
+        }
+        .profile {
+            text-align: center;
+            margin-bottom: 50px;
+            animation: fadeIn 1s ease;
+        }
+        .profile img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            border: 3px solid var(--link-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .profile img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px var(--link-color);
+        }
+        .profile h1 {
+            font-size: 2.5em;
+            color: var(--text-color);
+            margin-bottom: 10px;
+        }
+        .profile a {
+            font-size: 1.2em;
+            color: var(--link-color);
+            text-decoration: none;
+        }
+        .profile a:hover {
+            text-decoration: underline;
+        }
+        .game-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .game {
+            background-color: var(--card-bg-color);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px var(--shadow-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeIn 1.2s ease;
+        }
+        .game:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px var(--shadow-color);
+        }
+        .game img {
+            width: 100%;
+            height: auto;
+            transition: box-shadow 0.3s ease;
+        }
+        .game img:hover {
+            box-shadow: 0 0 10px var(--link-color);
+        }
+        .game h2 {
+            font-size: 1.5em;
+            margin: 15px;
+            color: var(--text-color);
+        }
+        .game p {
+            font-size: 1em;
+            margin: 15px;
+            color: var(--text-color);
+        }
+        .game .friendsonly {
+            font-weight: bold;
+            margin-left: 15px;
+            color: #ff4c4c;
+        }
+        .game a {
+            display: block;
+            text-align: center;
+            background: linear-gradient(145deg, var(--link-color), var(--hover-color));
+            color: #ffffff;
+            padding: 10px 0;
+            margin: 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+        }
+        .game a:hover {
+            background: linear-gradient(145deg, var(--hover-color), var(--link-color));
+            box-shadow: 0 0 10px var(--hover-color);
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @media (max-width: 768px) {
+            .profile h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Theme Switch Button -->
+        <button class="toggle-theme" onclick="toggleTheme()">Dark/Light Mode</button>
+        
+        <div class="profile">
+            <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-E5DACA7CAAB8D071193037AE47349B9B-Png/150/150/AvatarHeadshot/Webp/noFilter" alt="Profilbild von Bakar">
+            <h1>Profil von Bakar</h1>
+            <p><a href="https://www.roblox.com/users/2015520645/profile">Mein Roblox-Profil</a></p>
+        </div>
+
+        <div class="game-list">
+            <div class="game">
+                <img src="https://tr.rbxcdn.com/d3df05a519756e140882d2a062874ad0/352/352/Image/Png" alt="Bloxcraft Screenshot">
+                <h2>Bloxcraft BETA (by Bakar and Friends ONLY)</h2>
+                <p class="friendsonly">Nur für Freunde</p>
+                <p>Erstellt am: 21. September 2024</p>
+                <a href="https://www.roblox.com/games/113623444125262/Bloxcraft-BETA-by-Bakar-and-Friends-ONLY">Zum Spiel</a>
+            </div>
+
+            <div class="game">
+                <img src="https://tr.rbxcdn.com/a25767160ec736471501239d6e3108b0/352/352/Image/Png" alt="Code It Screenshot">
+                <h2>Code It</h2>
+                <p>Erstellt am: 22. August 2024</p>
+                <a href="https://www.roblox.com/games/83506498895555/Code-It">Zum Spiel</a>
+            </div>
+
+            <div class="game">
+                <img src="https://tr.rbxcdn.com/74cc3cfcaa7f97a54f2421cd380b644a/352/352/Image/Png" alt="Flex Your FPS Screenshot">
+                <h2>Flex Your FPS!</h2>
+                <p>Erstellt am: 3. August 2024</p>
+                <a href="https://www.roblox.com/games/18782787836/Flex-Your-FPS">Zum Spiel</a>
+            </div>
+
+            <div class="game">
+                <img src="https://tr.rbxcdn.com/0747dca3a4125c06a25038f8d6c308a0/352/352/Image/Png" alt="Wie gut kennst du Bakar Screenshot">
+                <h2>Wie gut kennst du Bakar? (Lies die Beschreibung)</h2>
+                <p class="friendsonly">Nur für Freunde</p>
+                <p>Erstellt am: 28. Juli 2024</p>
+                <a href="https://www.roblox.com/games/18692121593/Wie-gut-kennst-du-Bakar-Lies-die-Beschreibung">Zum Spiel</a>
+            </div>
+
+            <div class="game">
+                <img src="https://tr.rbxcdn.com/96d8b8a2f38a0c87a3f4e2419cea4a05/352/352/Image/Png" alt="Fun obby Screenshot">
+                <h2>Fun obby</h2>
+                <p>Erstellt am: 21. November 2022</p>
+                <a href="https://www.roblox.com/games/11627624972/Fun-obby">Zum Spiel</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Theme Toggle Function
+        function toggleTheme() {
+            const body = document.body;
+            const currentTheme = body.getAttribute('data-theme');
+            if (currentTheme === 'light') {
+                body.setAttribute('data-theme', 'dark');
+            } else {
+                body.setAttribute('data-theme', 'light');
+            }
+        }
+
+        // Initialize default theme
+        document.body.setAttribute('data-theme', 'dark');
+    </script>
+
+</body>
+</html>
